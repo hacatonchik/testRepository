@@ -2,10 +2,9 @@ window.onload = function(){
   $('.enter-text-chat-bot').click( function(){
     pizda($('.input-text-chat-bot').val());
   });
-  /*
+  /* 
+    типо сюда сможешь указать класс твоего текст ареа и нужной тебе кнопки 
   $('.enter-text-chat-bot').click( function(){
-  
-    типо сюда сможешь указать класс твоего текст ареа
     pizda($('.input-text-chat-bot').val());
   });
   */
