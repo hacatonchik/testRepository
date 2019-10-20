@@ -3,8 +3,9 @@ window.onload = function(){
     pizda($('.input-text-chat-bot').val());
   });
   /*
-  типо сюда сможешь указать класс твоего текст ареа
   $('.enter-text-chat-bot').click( function(){
+  
+    типо сюда сможешь указать класс твоего текст ареа
     pizda($('.input-text-chat-bot').val());
   });
   */
