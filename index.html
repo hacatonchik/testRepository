@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Bot</title>
+	<script src="https://www.gstatic.com/firebasejs/7.1.0/firebase.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+	<script src="java.js"></script>
+	<link href="style.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+<span id="textChange">Привет</span>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+
+
+<div class="chat-retail-form">
+
+
+<!--_______________________ Переместить потом в файл chat.html_______________________-->
+
+<div class="chat-retail-form__chat" style="z-index: 99999;">
+	<div class="chat_windows_print">
+			<!-- текст чата тута  -->
+	</div>
+	<div class="button_input">
+
+	<input type="text" class="text_input" value="">
+	<input class="button_enter" type="button" value="Отправить" onclick="enter_text()"/>
+
+
+	</div>
+</div>
+<div class="bshow">
+	<input class="button_hide_hide" type="button" value="скрыть" onclick="button_hide_hide()"/>
+</div>
+	<div class="bhide" style="display:none;">
+	<input class="button_hide_show" type="button" value="показать" onclick="button_hide_show()"/>
+</div>
+
+
+
+
+<!--_________________________________________________________________________________-->
+
+
+
+</div>
+
+
+</body>
+
+<script src="/__/firebase/7.1.0/firebase-app.js"></script>
+<script src="/__/firebase/7.1.0/firebase-analytics.js"></script>
+<script src="/__/firebase/init.js"></script>
+
+
+</html>
