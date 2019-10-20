@@ -2,6 +2,12 @@ window.onload = function(){
   $('.enter-text-chat-bot').click( function(){
     pizda($('.input-text-chat-bot').val());
   });
+  /*
+  типо сюда сможешь указать класс твоего текст ареа
+  $('.enter-text-chat-bot').click( function(){
+    pizda($('.input-text-chat-bot').val());
+  });
+  */
 };
 function pizda(str){
   let words = new Array();
