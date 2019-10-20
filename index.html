@@ -1,38 +1,42 @@
+
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <script src="https://www.gstatic.com/firebasejs/7.1.0/firebase.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-  <title>Document</title>
-  <link href="css/main.css" rel="stylesheet">
-  <script src="js/test.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<script src="https://www.gstatic.com/firebasejs/7.1.0/firebase.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<title>Document</title>
+<link href="css/main.css" rel="stylesheet">
 </head>
 <body>
-  <div class="main-chat-bot">
-    <div class ="close-chat-bot">
-      Закрыть
+<div class="main-chat-bot">
+  <div class ="close-chat-bot">
+        <div class="close-chat-bot-item">Закрыть</div>
+      </div>
+  <div class ="open-chat-bot" style="display:none;">
+    Открыть
+  </div>
+  <div class="structure-chat-bot">
+    <div class="write-text-chat-bot">
+    Сам чат
+    <div class="help-button-chat">
+    хелп кнопки
     </div>
-    <div class ="open-chat-bot" style="display:none;">
-      Открыть
     </div>
-    <div class="structure-chat-bot">
-      <div class="write-text-chat-bot">
-      Сам чат
-      <div class="help-button-chat">
-      хелп кнопки
-      </div>
-      </div>
-      <div class="editor-chat-bot">
-      <textarea class="input-text-chat-bot"></textarea>
-      <div class="enter-text-chat-bot">
-        отправить
-      </div>
-      </div>
+    <div class="editor-chat-bot">
+      <div class="input-text-chat">
+          <textarea class="input-text-chat-bot"></textarea>
+          </div>
+    <div class="enter-text-chat-bot">
+    <img class="enter-text-image"src="images.png">
+    </div>
     </div>
   </div>
+</div>
 </body>
-
+<script src="/__/firebase/7.1.0/firebase-app.js"></script>
+<script src="/__/firebase/7.1.0/firebase-analytics.js"></script>
+<script src="/__/firebase/init.js"></script>
 </html>
