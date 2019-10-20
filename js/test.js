@@ -1,6 +1,6 @@
 window.onload = function(){
   $('.enter-text-chat-bot').click( function(){
-    pizda($('#input-text-chat-bot').val());
+    pizda($('.input-text-chat-bot').val());
   });
 };
 function pizda(str){
