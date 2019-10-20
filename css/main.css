@@ -15,10 +15,45 @@
   border-radius: 0;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
   padding-bottom: 10px;
   min-height: 300px;
   max-height: calc(100vh - 150px);
-  animation: animation-chat-appear .25s ease;
-  -webkit-animation: animation-chat-appear .25s ease;
+}
+
+.close-chat-bot{
+  display: flex;
+  display: flex;
+  justify-content: flex-end;
+
+}
+
+.write-text-chat-bot{
+  background: red;
+  margin: 1vh;
+  flex-basis: 90%;
+}
+.close-chat-bot-item{
+  display: flex;
+    background: #9ba5b3;
+}
+
+.editor-chat-bot{
+
+  flex-basis: 10%;
+  display: flex;
+}
+.input-text-chat{
+  flex-basis: 90%;
+  margin: 10px;
+}
+.input-text-chat-bot{
+  width:100%;
+  resize: none;
+}
+.enter-text-chat-bot{
+display: block;
+}
+.enter-text-image{
+width: 50px;
+height: 50px;
 }
