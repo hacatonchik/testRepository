@@ -1,15 +1,15 @@
 window.onload = function(){
   $('.enter-text-chat-bot').click( function(){
-    pizda($('.input-text-chat-bot').val());
+    CheckingWordsArray(WordsArray($('.input-text-chat-bot').val()));
   });
-  /* 
-    типо сюда сможешь указать класс твоего текст ареа и нужной тебе кнопки 
+  /*
+    типо сюда сможешь указать класс твоего текст ареа и нужной тебе кнопки
   $('.enter-text-chat-bot').click( function(){
-    pizda($('.input-text-chat-bot').val());
+    WordsArray($('.input-text-chat-bot').val());
   });
   */
 };
-function pizda(str){
+function WordsArray(str){
   let words = new Array();
   var text1 = str.toLowerCase();
   var separator = ' ';
@@ -17,14 +17,31 @@ function pizda(str){
   var bufStr;
     for(var i=0;i<words.length;i++){
       bufStr = words[i];
-      if(bufStr[0].toLowerCase() == bufStr[0].toUpperCase()){
-        words[i] = words[i].split(bufStr[0]).join('');
+      for(var j=0;j<bufStr.length;j++){
+        if(bufStr[j] == bufStr[j].toUpperCase()){
+          if(j == 0 || j ==  bufStr.length-1) words[i] = words[i].split(bufStr[j]).join('');
+          else{
+            let bufArr = new Array();
+            words[i] = words[i].split(bufStr[j]).join(' ');
+            bufArr = words[i].split(separator);
+            words[i] = bufArr[0];
+            for(var l=1;l<bufArr.length;l++)
+              words.push(bufArr[l]);
+          }
+        }
       }
-      if(bufStr[bufStr.length-1].toLowerCase() == bufStr[bufStr.length-1].toUpperCase()){
-        words[i] = words[i].split(bufStr[bufStr.length-1]).join('');
-      }
+      if(words[i] == words[i].toUpperCase()) words.splice(i, 1);
     }
-  for(var i=0;i<words.length;i++){
-    alert(words[i]);
+    for(var i=0;i<words.length;i++){
+      if(words[i] == words[i].toUpperCase()) words.splice(i, 1);
+    }
+  return words;
+}
+function CheckingWordsArray(array){
+  bufArr = ["поступить","сайт","адресс","админка"];
+  for(var i=0;i<array.length;i++){
+    for(var j=0;j<bufArr.length;j++){
+      if(array[i] == bufArr[j]) alert("совпадение найдено, ответ на " + array[i]+" = хуй");
+    }
   }
 }
