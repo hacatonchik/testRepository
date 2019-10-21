@@ -1,6 +1,6 @@
-window.onload = function(){
+﻿window.onload = function(){
   $('.enter-text-chat-bot').click( function(){
-    CheckingWordsArray(WordsArray($('.input-text-chat-bot').val()));
+    WordsArray($('.input-text-chat-bot').val());
   });
   /*
     типо сюда сможешь указать класс твоего текст ареа и нужной тебе кнопки
@@ -35,13 +35,5 @@ function WordsArray(str){
     for(var i=0;i<words.length;i++){
       if(words[i] == words[i].toUpperCase()) words.splice(i, 1);
     }
-  return words;
-}
-function CheckingWordsArray(array){
-  bufArr = ["поступить","сайт","адресс","админка"];
-  for(var i=0;i<array.length;i++){
-    for(var j=0;j<bufArr.length;j++){
-      if(array[i] == bufArr[j]) alert("совпадение найдено, ответ на " + array[i]+" = хуй");
-    }
-  }
+  for(var i=0;i<words.length;i++) console.log(words[i]);
 }
