@@ -1,6 +1,7 @@
 ﻿window.onload = function(){
   $('.enter-text-chat-bot').click( function(){
-    WordsArray($('.input-text-chat-bot').val());
+    //WordsArray($('.input-text-chat-bot').val());
+    AddSpan(1, $('.input-text-chat-bot').val());
   });
   /*
     типо сюда сможешь указать класс твоего текст ареа и нужной тебе кнопки
@@ -12,7 +13,6 @@
 function WordsArray(keyString){
   let words = new Array();
   keyString = keyString.toLowerCase();
-  var separator = ' ';
   var stringKey = "";
   for(var i=0;i<keyString.length;i++){
     if(keyString[i] != keyString[i].toUpperCase()){
@@ -23,4 +23,12 @@ function WordsArray(keyString){
     }
   }
   return words;
+}
+function AddSpan(number, inputString){
+  if(number == 1){
+    $('.write-text-chat-bot').append($("<div class='output-users-text'><span class='output-users-text-span'>"+inputString+"</span></div>"));
+  }
+  if(number == 0){
+    $('.write-text-chat-bot').append($("<div class='output-chat-bot-text'><span class='output-chat-bot-text-span'>"+WordsArray(inputString)+"</span></div>"));
+  }
 }
