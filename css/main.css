@@ -22,19 +22,21 @@
 
 .close-chat-bot{
   display: flex;
-  display: flex;
   justify-content: flex-end;
 
 }
+.close-chat-bot-item{
+  display: flex;
+	background: #9ba5b3;
+}
+
 
 .write-text-chat-bot{
   background: red;
   margin: 1vh;
   flex-basis: 90%;
-}
-.close-chat-bot-item{
   display: flex;
-    background: #9ba5b3;
+  flex-direction: column;
 }
 
 .editor-chat-bot{
@@ -44,16 +46,35 @@
 }
 .input-text-chat{
   flex-basis: 90%;
-  margin: 10px;
 }
 .input-text-chat-bot{
   width:100%;
   resize: none;
 }
 .enter-text-chat-bot{
-display: block;
+  background-image: url(1.jpg);
 }
-.enter-text-image{
-width: 50px;
-height: 50px;
+.output-chat-bot-text{
+display: flex;
+justify-content: flex-start;
+padding-left: 5px;
+}
+.output-users-text{
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 5px;
+}
+.output-users-text-span{
+  padding: 10px;
+  background-color: yellow;
+  -moz-border-radius:5px;
+  -webkit-border-radius:5px;
+  border-radius: 10px;
+}
+.output-chat-bot-text-span{
+  padding: 10px;
+  background-color: white;
+  -moz-border-radius:5px;
+  -webkit-border-radius:5px;
+  border-radius: 10px;
 }
