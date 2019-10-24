@@ -1,4 +1,14 @@
 ﻿$(document).ready(function(){
+  $('.open-chat-bot').click( function(){
+    $('.close-chat-bot-item').show();
+    $('.open-chat-bot').hide();
+    $('.structure-chat-bot').show();
+  });
+  $('.close-chat-bot-item').click( function(){
+    $('.close-chat-bot-item').hide();
+    $('.open-chat-bot').show();
+    $('.structure-chat-bot').hide();
+  });
   $('.enter-text-chat-bot').click( function(){
     onUpdate();
   });
@@ -6,7 +16,6 @@
     if(e.which == 13) {
       onUpdate();
     }
-
 });
 
 var config = {
