@@ -1,15 +1,20 @@
-﻿window.onload = function(){
+﻿$(document).ready(function(){
   $('.enter-text-chat-bot').click( function(){
     //WordsArray($('.input-text-chat-bot').val());
     AddSpan(1, $('.input-text-chat-bot').val());
   });
+  $(document).on('keypress',function(e) {
+    if(e.which == 13) {
+        AddSpan(1, $('.input-text-chat-bot').val());
+    }
+});
   /*
     типо сюда сможешь указать класс твоего текст ареа и нужной тебе кнопки
   $('.enter-text-chat-bot').click( function(){
     WordsArray($('.input-text-chat-bot').val());
   });
   */
-};
+});
 function WordsArray(keyString){
   let words = new Array();
   keyString = keyString.toLowerCase();
@@ -31,4 +36,6 @@ function AddSpan(number, inputString){
   if(number == 0){
     $('.write-text-chat-bot').append($("<div class='output-chat-bot-text'><span class='output-chat-bot-text-span'>"+WordsArray(inputString)+"</span></div>"));
   }
+  jQuery('textarea').blur();
+  $('.input-text-chat-bot').val("");
 }
