@@ -29,20 +29,22 @@ var ref = firebase.database().ref();
 
 function onUpdate(){
   var textareaText=$("textarea.input-text-chat-bot").val();
-jQuery('textarea').blur();
-
+  //jQuery('textarea').blur();
+  //jQuery('textarea').focus();
   let wordsAnswer = WordsArray(textareaText);
   if(wordsAnswer.length!=0){
     AddSpan(1,textareaText);
   }
   var countAnswer = "";
   for(var i=0;i<wordsAnswer.length;i++){
-
-
     if(countAnswer!=wordsAnswer[i]){
-    getAnswerBot(wordsAnswer[i]);}
+    getAnswerBot(wordsAnswer[i]);
+  }
 countAnswer=wordsAnswer[i];
   }
+  $('.write-text-chat-bot').stop().animate({
+  scrollTop: $('.write-text-chat-bot')[0].scrollHeight
+}, 800);
 }
 
 function getAnswerBot(keys){
