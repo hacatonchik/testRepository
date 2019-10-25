@@ -17,11 +17,12 @@ opacity:1;
 animation: show 1s 1;
 animation-fill-mode: forwards;
 animation-delay: 0.5s;
+
 }
 .structure-chat-bot{
   width: 330px;
   height: 600px;
-  background-color: #f0f0f0;
+  background-color: #1E90FF;
   font-size: 12px;
   line-height: 18px;
   box-shadow: 0 0px 40px rgba(0,0,0,.9);
@@ -31,6 +32,7 @@ animation-delay: 0.5s;
   padding-bottom: 10px;
   min-height: 300px;
   max-height: calc(100vh - 150px);
+  border-radius: 15px;
 }
 
 .close-chat-bot{
@@ -45,12 +47,13 @@ animation-delay: 0.5s;
 
 
 .write-text-chat-bot{
-  background: red;
+  background:#B0E0E6;
   margin: 1vh;
   flex-basis: 90%;
   display: flex;
   flex-direction: column;
   overflow-y: scroll;
+  border-radius: 15px 0px 0px 15px;
 
 }
 
@@ -63,11 +66,18 @@ animation-delay: 0.5s;
   flex-basis: 90%;
 }
 .input-text-chat-bot{
-  width:100%;
+  width:95%;
   resize: none;
+  margin-left: 5px;
 }
 .enter-text-chat-bot{
-  background-image: url(1.jpg);
+  background-image: url(../1.png);
+  width:36px;
+  height: 36px;
+  margin-right: 5px;
+  margin-left: 5px;
+  background-size: contain;
+  border-radius: 100%;
 }
 .output-chat-bot-text{
 display: flex;
@@ -82,7 +92,7 @@ word-wrap: break-word;
 }
 .output-users-text-span{
   padding: 10px;
-  background-color: yellow;
+  background-color: #00BFFF;
   -moz-border-radius:5px;
   -webkit-border-radius:5px;
   border-radius: 10px;
@@ -91,9 +101,8 @@ word-wrap: break-word;
 }
 .output-chat-bot-text-span{
   padding: 10px;
+  margin-top: 5px;
   background-color: white;
-  -moz-border-radius:5px;
-  -webkit-border-radius:5px;
   border-radius: 10px;
 
 
@@ -106,6 +115,13 @@ word-wrap: break-word;
 }
 .help-button-chat-item{
   padding: 5px;
-  background-color: red;
+  background-color: #00BFFF;
   border-radius: 5px;
 }
+::-webkit-scrollbar { width: 6px; height: 6px;}
+::-webkit-scrollbar-button {  background-color: #666; }
+::-webkit-scrollbar-track {  background-color: #999;}
+::-webkit-scrollbar-track-piece { background-color: #B0E0E6;}
+::-webkit-scrollbar-thumb { height: 50px; background-color: #666; border-radius: 3px;}
+::-webkit-scrollbar-corner { background-color: #999;}}
+::-webkit-resizer { background-color: #666;}
