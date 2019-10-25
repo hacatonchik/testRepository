@@ -1,4 +1,14 @@
 ﻿$(document).ready(function(){
+
+  $('.write-text-chat-bot').mouseenter(function(){
+
+
+});
+$('.write-text-chat-bot').mouseleave(function(){
+
+
+});
+
   $('.open-chat-bot').click( function(){
     $('.close-chat-bot-item').show();
     $('.open-chat-bot').hide();
@@ -14,9 +24,13 @@
   });
   $(document).on('keypress',function(e) {
     if(e.which == 13) {
+
       onUpdate();
+      $('.input-text-chat-bot').val(null);
+
     }
   });
+
 var indArr = 0;
 let arrQuestions = ["Работа, связанная с учетом и контролем, – это интересно?",
                     "Ты предпочтешь заниматься финансовыми операциями, а не, например, музыкой?",
@@ -134,7 +148,9 @@ firebase.initializeApp(config);
 var ref = firebase.database().ref();
 
 function onUpdate(){
+
   var textareaText=$("textarea.input-text-chat-bot").val();
+
   let wordsAnswer = WordsArray(textareaText);
   if(wordsAnswer.length!=0){
     AddSpan(1,textareaText);
@@ -193,5 +209,5 @@ function AddSpan(number, inputString){
     $('.write-text-chat-bot').append($("<div class='output-chat-bot-text'><span class='output-chat-bot-text-span'>"+ inputString+"</span></div>"));
   }
 
-  $('.input-text-chat-bot').val("");
+
 }
