@@ -35,10 +35,6 @@ background-size: cover;
 .close-chat-bot{
   display: flex;
   justify-content: flex-end;
-
-}
-.close-chat-bot{
-  display: flex;
   background-image:url(../close_button.png);
   background-size: contain;
   background-repeat: no-repeat;
