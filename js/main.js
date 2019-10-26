@@ -1,35 +1,64 @@
 $(document).ready(function(){
 
-/*
-$('.write-text-chat-bot').mouseenter(function(){
+  /*
+  $('.write-text-chat-bot').mouseenter(function(){
 
-});
-$('.write-text-chat-bot').mouseleave(function(){
+  });
+  $('.write-text-chat-bot').mouseleave(function(){
 
-});
-*/
-$('.open-chat-bot').click( function(){
-  $('.close-chat-bot').show();
-  $('.open-chat-bot').hide();
-  $('.structure-chat-bot').show();
-});
-$('.close-chat-bot').click( function(){
-  $('.close-chat-bot').hide();
-  $('.open-chat-bot').show();
-  $('.structure-chat-bot').hide();
-});
+  });
+  */
+  $('.open-chat-bot').click( function(){
+    $('.close-chat-bot').show();
+    $('.open-chat-bot').hide();
+    $('.structure-chat-bot').show();
+  });
+  $('.close-chat-bot').click( function(){
+    $('.close-chat-bot').hide();
+    $('.open-chat-bot').show();
+    $('.structure-chat-bot').hide();
+  });
 
-$('.enter-text-chat-bot').click( function(){
-  onUpdate();
-});
-$(document).on('keypress',function(e) {
-  if(e.which == 13) {
+  $('.enter-text-chat-bot').click( function(){
     onUpdate();
-    $('.input-text-chat-bot').val(null);
-  }
+  });
+  $(document).on('keypress',function(e) {
+    if(e.which == 13) {
+      onUpdate();
+      $('.input-text-chat-bot').val(null);
+    }
+  });
+  $('#start-test').click(function(){
+    $('#start-test').hide();
+    $('#what-can-you-do').hide();
+    $('.input-text-chat').hide();
+    $('.enter-text-chat-bot').hide();
+    $('#first-answer').show();
+    $('#second-answer').show();
+    $('#third-answer').show();
+    $('#end-test').show();
+    $('.write-text-chat-bot').append($("<div class='output-chat-bot-text'><span class='output-chat-bot-text-span'>" +arrQuestions[indArr]+ "</span></div>"));
+  });
+
+
+  $('#first-answer').click(function(){
+    countPoints += 2;
+    nextQuestion(countPoints,"Да");
+  });
+  $('#second-answer').click(function(){
+    countPoints++;
+    nextQuestion(countPoints,"Затрудняюсь ответить");
+  });
+  $('#third-answer').click(function(){
+
+    nextQuestion(countPoints,"Нет");
+  });
+
+  $('#end-test').click(function(){
+    endTest();
+  });
 });
 
-var indArr = 0;
 let arrQuestions = ["Работа, связанная с учетом и контролем, – это интересно?",
                     "Ты предпочтешь заниматься финансовыми операциями, а не, например, музыкой?",
                     "Ты можешь расчитать сколько времени уйдет на дорогу до работы?",
@@ -60,44 +89,8 @@ let arrQuestions = ["Работа, связанная с учетом и кон�
                     "После вечеринки мытье посуды ты откладываешь до утра?",
                     "Ты серьезно отношусишься к своему здоровью?",
                     "Когда у тебя что-то не получается, ты терпеливо стараешься найти решение?"];
-$('#start-test').click(function(){
-  $('#start-test').hide();
-  $('#what-can-you-do').hide();
-  $('.input-text-chat').hide();
-  $('.enter-text-chat-bot').hide();
-  $('#first-answer').show();
-  $('#second-answer').show();
-  $('#third-answer').show();
-  $('#end-test').show();
-  $('.write-text-chat-bot').append($("<div class='output-chat-bot-text'><span class='output-chat-bot-text-span'>" +arrQuestions[indArr]+ "</span></div>"));
-});
-
+var indArr = 0;
 var countPoints = 0;
-$('#first-answer').click(function(){
-  countPoints += 2;
-  nextQuestion(countPoints,"Да");
-});
-$('#second-answer').click(function(){
-  countPoints++;
-  nextQuestion(countPoints,"Затрудняюсь ответить");
-});
-$('#third-answer').click(function(){
-
-  nextQuestion(countPoints,"Нет");
-});
-
-$('#end-test').click(function(){
-  endTest();
-});
-
-
-
-
-});
-
-
-
-
 function nextQuestion(countPoints,answer){
   $('.write-text-chat-bot').stop().animate({
   scrollTop: $('.write-text-chat-bot')[0].scrollHeight
