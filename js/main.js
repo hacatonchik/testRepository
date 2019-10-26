@@ -1,14 +1,6 @@
 ﻿$(document).ready(function(){
 
-  var config = {
-  apiKey: "AIzaSyAl05TmTxUFYOfpnKov_BUgZUD090OrIFU",
-  authDomain: "disobeyparrot.firebaseapp.com",
-  databaseURL: "https://disobeyparrot.firebaseio.com",
-  storageBucket: "disobeyparrot.appspot.com"
-  };
-  firebase.initializeApp(config);
 
-  var ref = firebase.database().ref();
 
 
   $('.write-text-chat-bot').mouseenter(function(){
@@ -102,6 +94,17 @@ $('#third-answer').click(function(){
 $('#end-test').click(function(){
   endTest();
 });
+
+});
+var config = {
+apiKey: "AIzaSyAl05TmTxUFYOfpnKov_BUgZUD090OrIFU",
+authDomain: "disobeyparrot.firebaseapp.com",
+databaseURL: "https://disobeyparrot.firebaseio.com",
+storageBucket: "disobeyparrot.appspot.com"
+};
+firebase.initializeApp(config);
+
+var ref = firebase.database().ref();
 
 function endTest(){
   $('#start-test').show();
@@ -198,7 +201,7 @@ function dbAnswer(answer){
 
 }
 
-});
+
 function WordsArray(keyString){
   let words = new Array();
   keyString = keyString.toLowerCase();
@@ -219,10 +222,10 @@ function WordsArray(keyString){
 function AddSpan(number, inputString){
   inputString[0] = inputString[0].toUpperCase();
   if(number == 1){
-    $('.write-text-chat-bot').append($("<div class='output-users-text'><span class='output-users-text-span'>"+inputString+"</span></div>"));
+    $('.write-text-chat-bot').append($("<div class='output-users-text'><span class='output-users-text-span'>\""+inputString+"\"</span></div>"));
   }
   if(number == 0){
-    $('.write-text-chat-bot').append($("<div class='output-chat-bot-text'><span class='output-chat-bot-text-span'>"+ inputString+"</span></div>"));
+    $('.write-text-chat-bot').append($("<div class='output-chat-bot-text'><span class='output-chat-bot-text-span'>\""+ inputString+"\"</span></div>"));
   }
 
 
