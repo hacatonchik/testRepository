@@ -67,8 +67,7 @@ let arrQuestions = ["Работа, связанная с учетом и кон�
 $('#start-test').click(function(){
   $('#start-test').hide();
   $('#what-can-you-do').hide();
-  $('.input-text-chat').hide();
-  $('.enter-text-chat-bot').hide();
+  $('.editor-chat-bot').hide();
   $('#first-answer').show();
   $('#second-answer').show();
   $('#third-answer').show();
