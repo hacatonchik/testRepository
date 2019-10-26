@@ -221,10 +221,10 @@ function WordsArray(keyString){
 function AddSpan(number, inputString){
   inputString[0] = inputString[0].toUpperCase();
   if(number == 1){
-    $('.write-text-chat-bot').append($("<div class='output-users-text'><span class='output-users-text-span'>\""+inputString+"\"</span></div>"));
+    $('.write-text-chat-bot').append($("<div class='output-users-text'><span class='output-users-text-span'>"+inputString+"</span></div>"));
   }
   if(number == 0){
-    $('.write-text-chat-bot').append($("<div class='output-chat-bot-text'><span class='output-chat-bot-text-span'>\""+ inputString+"\"</span></div>"));
+    $('.write-text-chat-bot').append($("<div class='output-chat-bot-text'><span class='output-chat-bot-text-span'>"+ inputString+"</span></div>"));
   }
 
 
