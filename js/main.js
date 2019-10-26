@@ -27,9 +27,8 @@ $('.write-text-chat-bot').mouseleave(function(){
   });
   $(document).on('keypress',function(e) {
     if(e.which == 13) {
-
+      $('textarea.input-text-chat-bot').blur();
       onUpdate();
-      $('.input-text-chat-bot').val(null);
 
     }
   });
@@ -177,6 +176,7 @@ countAnswer=wordsAnswer[i];
   $('.write-text-chat-bot').stop().animate({
   scrollTop: $('.write-text-chat-bot')[0].scrollHeight
 }, 800);
+  $('textarea.input-text-chat-bot').val('');
 }
 
 
