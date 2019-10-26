@@ -107,8 +107,7 @@ var ref = firebase.database().ref();
 function endTest(){
   $('#start-test').show();
   $('#what-can-you-do').show();
-  $('.input-text-chat').show();
-  $('.enter-text-chat-bot').show();
+  $('.editor-chat-bot').show();
   $('#first-answer').hide();
   $('#second-answer').hide();
   $('#third-answer').hide();
