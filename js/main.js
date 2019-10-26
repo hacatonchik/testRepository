@@ -6,6 +6,69 @@ $('.write-text-chat-bot').mouseleave(function(){
 
 });
 
+//многоточие
+$('#what-can-you-do').click( function(){
+  if($('#start-test').css('display') == 'none'){
+  $('#start-test').show();
+  $('#korp-2').hide();
+  $('#korp-3').hide();
+  $('#korp-1').hide();
+  $('#korp-10').hide();
+  $('#how-to-proceed').hide();
+  $('#ranked-list').hide();
+  $('#selection-committee').hide();
+
+
+
+} else {
+$('#start-test').hide();
+$('#korp-2').show();
+$('#korp-3').show();
+$('#korp-1').show();
+$('#korp-10').show();
+$('#how-to-proceed').show();
+$('#ranked-list').show();
+$('#selection-committee').show();
+
+}
+
+
+});
+
+$('#korp-1').click( function(){
+  AddSpan(1,"Покажи адрес первого корпуса");
+  enterMap1();
+});
+$('#korp-2').click( function(){
+  AddSpan(1,"Покажи адрес второго корпуса");
+  enterMap2();
+});
+$('#korp-3').click( function(){
+  AddSpan(1,"Покажи адрес третьего корпуса");
+  enterMap3();
+});
+$('#korp-10').click( function(){
+  AddSpan(1,"Покажи адрес десятого корпуса");
+  enterMap10();
+});
+$('#how-to-proceed').click( function(){
+  AddSpan(1,"Как поступить");
+  getAnswerBot("поступить");
+});
+$('#ranked-list').click( function(){
+  AddSpan(1,"Рейтинг листы");
+  getAnswerBot("рейтинг");
+});
+$('#selection-committee').click( function(){
+  AddSpan(1,"Адрес приёмной комиссии");
+  getAnswerBot("приёмная");
+});
+
+
+
+
+
+
   $('.open-chat-bot').click( function(){
     $('.close-chat-bot').show();
     $('.open-chat-bot').hide();

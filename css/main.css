@@ -96,10 +96,12 @@ align-content: stretch;
 display: flex;
 justify-content: flex-start;
 padding-left: 5px;
+
 }
 .output-chat-bot-text-span{
   padding: 5px 7px 5px 7px;
-  margin-top: 5px;
+  margin-top: 2.5px;
+  margin-bottom: 2.5px;
   background-color: #ffffff;
   border-radius: 10px;
   color:#1d1d1d;
@@ -114,7 +116,8 @@ font-size: 14px;
 word-wrap: break-word;
 }
 .output-users-text-span{
-  margin-top: 5px;
+  margin-top: 2.5px;
+  margin-bottom: 2.5px;
   padding: 5px 7px 5px 7px;
   background-color: #5cb2ff;
   border-radius: 10px;
@@ -131,8 +134,10 @@ word-wrap: break-word;
   justify-content:space-around;
   padding-bottom: 0.5vh;
   padding-top: 0.5vh;
+  flex-wrap:wrap;
 }
 .help-button-chat-item{
+
   padding: 5px 7px 5px 7px;
   background-color: rgba(15, 53, 117, 0.42);
   border-radius: 5px;
@@ -141,6 +146,10 @@ word-wrap: break-word;
   font-size: 13px;
     cursor:pointer;
     justify-content: center;
+    text-align: center;
+    margin-top: 3px;
+    margin-left: 1px;
+    margin-right: 1px;
 }
 .help-button-chat-span{
   color: #ffffff;
@@ -178,4 +187,35 @@ font-family: 'Roboto', cursive;
   text-decoration: none;
   color: #EF123A;
   font-size: 16px;
+}
+
+#what-can-you-do{
+  flex-basis: 10%;
+  font-size: 25px;
+
+}
+#start-test{
+  flex-basis: 70%;
+}
+#korp-10{
+  font-size: 11px;
+  flex-basis: 43%;
+}
+#ranked-list{
+  flex-basis: 43%;
+}
+#korp-3{
+  font-size: 11px;
+  flex-basis: 43%;
+}
+#selection-committee{
+  flex-basis: 43%;
+  font-size: 12px;
+}
+#korp-1{
+  font-size: 11px;
+  flex-basis: 43%;
+}
+#how-to-proceed{
+  flex-basis: 43%;
 }
