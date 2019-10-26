@@ -140,6 +140,7 @@ word-wrap: break-word;
   font-family: 'Spinnaker', serif;
   font-size: 13px;
     cursor:pointer;
+    justify-content: center;
 }
 .help-button-chat-span{
   color: #ffffff;
@@ -172,4 +173,9 @@ margin: auto;
 color:#ffffff;
 font-size: 19px;
 font-family: 'Roboto', cursive;
+}
+.href-text {
+  text-decoration: none;
+  color: #EF123A;
+  font-size: 16px;
 }
