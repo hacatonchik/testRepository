@@ -10,12 +10,12 @@ $('.write-text-chat-bot').mouseleave(function(){
 });
 
   $('.open-chat-bot').click( function(){
-    $('.close-chat-bot-item').show();
+    $('.close-chat-bot').show();
     $('.open-chat-bot').hide();
     $('.structure-chat-bot').show();
   });
-  $('.close-chat-bot-item').click( function(){
-    $('.close-chat-bot-item').hide();
+  $('.close-chat-bot').click( function(){
+    $('.close-chat-bot').hide();
     $('.open-chat-bot').show();
     $('.structure-chat-bot').hide();
   });
