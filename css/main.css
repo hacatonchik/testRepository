@@ -37,12 +37,14 @@ background-size: cover;
   justify-content: flex-end;
 
 }
-.close-chat-bot-item{
+.close-chat-bot{
   display: flex;
-	background: #9ba5b3;
   background-image:url(../close_button.png);
   background-size: contain;
   background-repeat: no-repeat;
+  flex-basis: 7%;
+  background-position: center;
+  background-size: 100%;
 }
 .write-text-chat-bot{
   background:#f2f9ff;
@@ -131,13 +133,15 @@ font-size: 14px;
   outline: none;
 }
 .chat-bot-headbar{
-display: flex;
+  display: flex;
   flex-basis: 7%;
-  justify-content: center;
+}
+.chat-bot-headbar-title{
+display: flex;
+margin: auto;
 align-items: center;
 color:#ffffff;
 font-size: 19px;
-flex-basis: 7%;
 font-family: 'Roboto', cursive;
 }
 .write-text-chat-bot::-webkit-scrollbar { width: 6px; height: 6px;}
