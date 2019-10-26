@@ -36,12 +36,12 @@ background-size: cover;
 .close-chat-bot{
   display: flex;
   justify-content: flex-end;
-  background-image:url(../close-icon.png);
+  background-image:url(../close_button.png);
   background-size: contain;
   background-repeat: no-repeat;
   flex-basis: 7%;
   background-position: center;
-  background-size: 3vh;
+  background-size: 4vh;
   -webkit-transition: -webkit-transform .4s ease-in-out;
    cursor:pointer;
 }
@@ -140,11 +140,10 @@ word-wrap: break-word;
   font-family: 'Spinnaker', serif;
   font-size: 13px;
     cursor:pointer;
-
+    justify-content: center;
 }
 .help-button-chat-span{
   color: #ffffff;
-      justify-content: center;
 }
 .input-text-chat-bot{
   width:100%;

@@ -209,6 +209,18 @@ function WordsArray(keyString){
   return words;
 }
 
+function enterMap2(){
+  AddSpan(0,"<iframe src=\"https://yandex.ru/map-widget/v1/?um=constructor%3A9c2a512da70f805dbe87bef228475a2d64f2b1ac0267d86a9b4cf408285aaf09&amp;source=constructor\" width=\"290\" height=\"290\" frameborder=\"0\"></iframe>");
+}
+function enterMap1(){
+  AddSpan(0,"<iframe src=\"https://yandex.ru/map-widget/v1/?um=constructor%3Adaf66d032fb906a2655ec7fc3080379c39aa7d9a278bc55ee1d824f20dd93dc5&amp;source=constructor\" width=\"290\" height=\"290\" frameborder=\"0\"></iframe>");
+}
+function enterMap3(){
+  AddSpan(0,"<iframe src=\"https://yandex.ru/map-widget/v1/?um=constructor%3Aa1016013ad9249fb967f4697ae6342489fb446f81a06b1d3a29e89dfbf80e8bf&amp;source=constructor\" width=\"290\" height=\"290\" frameborder=\"0\"></iframe>");
+}
+function enterMap10(){
+  AddSpan(0,"<iframe src=\"https://yandex.ru/map-widget/v1/?um=constructor%3A4f26a9c706c64d9a59663c76adfe9e5efc685c695dcdfdaeb416564714bff620&amp;source=constructor\" width=\"290\" height=\"290\" frameborder=\"0\"></iframe>");
+}
 
 function AddSpan(number, inputString){
   inputString[0] = inputString[0].toUpperCase();
@@ -218,4 +230,7 @@ function AddSpan(number, inputString){
   if(number == 0){
     $('.write-text-chat-bot').append($("<div class='output-chat-bot-text'><span class='output-chat-bot-text-span'>"+ inputString+"</span></div>"));
   }
+  $('.write-text-chat-bot').stop().animate({
+  scrollTop: $('.write-text-chat-bot')[0].scrollHeight
+}, 800);
 }
