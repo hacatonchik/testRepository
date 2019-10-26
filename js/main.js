@@ -1,35 +1,33 @@
-﻿$(document).ready(function(){
+$(document).ready(function(){
 
-  $('.write-text-chat-bot').mouseenter(function(){
-
+/*
+$('.write-text-chat-bot').mouseenter(function(){
 
 });
 $('.write-text-chat-bot').mouseleave(function(){
 
-
+});
+*/
+$('.open-chat-bot').click( function(){
+  $('.close-chat-bot').show();
+  $('.open-chat-bot').hide();
+  $('.structure-chat-bot').show();
+});
+$('.close-chat-bot').click( function(){
+  $('.close-chat-bot').hide();
+  $('.open-chat-bot').show();
+  $('.structure-chat-bot').hide();
 });
 
-  $('.open-chat-bot').click( function(){
-    $('.close-chat-bot').show();
-    $('.open-chat-bot').hide();
-    $('.structure-chat-bot').show();
-  });
-  $('.close-chat-bot').click( function(){
-    $('.close-chat-bot').hide();
-    $('.open-chat-bot').show();
-    $('.structure-chat-bot').hide();
-  });
-  $('.enter-text-chat-bot').click( function(){
+$('.enter-text-chat-bot').click( function(){
+  onUpdate();
+});
+$(document).on('keypress',function(e) {
+  if(e.which == 13) {
     onUpdate();
-  });
-  $(document).on('keypress',function(e) {
-    if(e.which == 13) {
-
-      onUpdate();
-      $('.input-text-chat-bot').val(null);
-
-    }
-  });
+    $('.input-text-chat-bot').val(null);
+  }
+});
 
 var indArr = 0;
 let arrQuestions = ["Работа, связанная с учетом и контролем, – это интересно?",
@@ -92,18 +90,13 @@ $('#end-test').click(function(){
   endTest();
 });
 
-function endTest(){
-  $('#start-test').show();
-  $('#what-can-you-do').show();
-  $('.input-text-chat').show();
-  $('.enter-text-chat-bot').show();
-  $('#first-answer').hide();
-  $('#second-answer').hide();
-  $('#third-answer').hide();
-  $('#end-test').hide();
-  countPoints = 0;
-  indArr = 0;
-}
+
+
+
+});
+
+
+
 
 function nextQuestion(countPoints,answer){
   $('.write-text-chat-bot').stop().animate({
@@ -135,7 +128,50 @@ function nextQuestion(countPoints,answer){
     indArr = 0;
     endTest();
   }
+}
 
+function onUpdate(){
+  var textareaText=$("textarea.input-text-chat-bot").val();
+  let wordsAnswer = WordsArray(textareaText);
+  if(wordsAnswer.length!=0){
+    AddSpan(1,textareaText);
+  }
+  var countAnswer = "";
+  for(var i=0;i<wordsAnswer.length;i++){
+    if(countAnswer!=wordsAnswer[i]){
+    getAnswerBot(wordsAnswer[i]);
+  }
+  countAnswer=wordsAnswer[i];
+  }
+  $('.write-text-chat-bot').stop().animate({
+  scrollTop: $('.write-text-chat-bot')[0].scrollHeight
+  }, 800);
+}
+
+function getAnswerBot(keys){
+  ref.child("chatBot").child(keys).child("answer").once("value").then(function(snapshot) {
+    var result = snapshot.val();
+      if(result!=null){
+        dbAnswer(result);
+      }
+  });
+}
+
+function endTest(){
+  $('#start-test').show();
+  $('#what-can-you-do').show();
+  $('.input-text-chat').show();
+  $('.enter-text-chat-bot').show();
+  $('#first-answer').hide();
+  $('#second-answer').hide();
+  $('#third-answer').hide();
+  $('#end-test').hide();
+  countPoints = 0;
+  indArr = 0;
+}
+
+function dbAnswer(answer){
+  AddSpan(0,answer);
 }
 
 var config = {
@@ -147,42 +183,6 @@ storageBucket: "disobeyparrot.appspot.com"
 firebase.initializeApp(config);
 var ref = firebase.database().ref();
 
-function onUpdate(){
-
-  var textareaText=$("textarea.input-text-chat-bot").val();
-
-  let wordsAnswer = WordsArray(textareaText);
-  if(wordsAnswer.length!=0){
-    AddSpan(1,textareaText);
-  }
-  var countAnswer = "";
-  for(var i=0;i<wordsAnswer.length;i++){
-    if(countAnswer!=wordsAnswer[i]){
-    getAnswerBot(wordsAnswer[i]);
-  }
-countAnswer=wordsAnswer[i];
-  }
-  $('.write-text-chat-bot').stop().animate({
-  scrollTop: $('.write-text-chat-bot')[0].scrollHeight
-}, 800);
-}
-
-function getAnswerBot(keys){
-  ref.child("chatBot").child(keys).child("answer").once("value").then(function(snapshot) {
-    var result = snapshot.val();
-      if(result!=null){
-
-        dbAnswer(result);
-      }
-  });
-}
-
-function dbAnswer(answer){
-  AddSpan(0,answer);
-
-}
-
-});
 function WordsArray(keyString){
   let words = new Array();
   keyString = keyString.toLowerCase();
@@ -198,8 +198,6 @@ function WordsArray(keyString){
   }
   return words;
 }
-
-
 function AddSpan(number, inputString){
   inputString[0] = inputString[0].toUpperCase();
   if(number == 1){
@@ -208,6 +206,4 @@ function AddSpan(number, inputString){
   if(number == 0){
     $('.write-text-chat-bot').append($("<div class='output-chat-bot-text'><span class='output-chat-bot-text-span'>"+ inputString+"</span></div>"));
   }
-
-
 }
