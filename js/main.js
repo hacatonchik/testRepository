@@ -1,14 +1,8 @@
-﻿$(document).ready(function(){
-
-
-
-
+$(document).ready(function(){
   $('.write-text-chat-bot').mouseenter(function(){
-
 
 });
 $('.write-text-chat-bot').mouseleave(function(){
-
 
 });
 
@@ -29,10 +23,39 @@ $('.write-text-chat-bot').mouseleave(function(){
     if(e.which == 13) {
       $('textarea.input-text-chat-bot').blur();
       onUpdate();
-
     }
   });
+$('#start-test').click(function(){
+  $('#start-test').hide();
+  $('#what-can-you-do').hide();
+  $('.editor-chat-bot').hide();
+  $('#first-answer').show();
+  $('#second-answer').show();
+  $('#third-answer').show();
+  $('#end-test').show();
+  $('.write-text-chat-bot').append($("<div class='output-chat-bot-text'><span class='output-chat-bot-text-span'>" +arrQuestions[indArr]+ "</span></div>"));
+});
 
+$('#first-answer').click(function(){
+  countPoints += 2;
+  nextQuestion(countPoints,"Да");
+});
+$('#second-answer').click(function(){
+  countPoints++;
+  nextQuestion(countPoints,"Затрудняюсь ответить");
+});
+$('#third-answer').click(function(){
+
+  nextQuestion(countPoints,"Нет");
+});
+
+$('#end-test').click(function(){
+  endTest();
+});
+
+});
+
+var countPoints = 0;
 var indArr = 0;
 let arrQuestions = ["Работа, связанная с учетом и контролем, – это интересно?",
                     "Ты предпочтешь заниматься финансовыми операциями, а не, например, музыкой?",
@@ -64,36 +87,6 @@ let arrQuestions = ["Работа, связанная с учетом и кон�
                     "После вечеринки мытье посуды ты откладываешь до утра?",
                     "Ты серьезно отношусишься к своему здоровью?",
                     "Когда у тебя что-то не получается, ты терпеливо стараешься найти решение?"];
-$('#start-test').click(function(){
-  $('#start-test').hide();
-  $('#what-can-you-do').hide();
-  $('.editor-chat-bot').hide();
-  $('#first-answer').show();
-  $('#second-answer').show();
-  $('#third-answer').show();
-  $('#end-test').show();
-  $('.write-text-chat-bot').append($("<div class='output-chat-bot-text'><span class='output-chat-bot-text-span'>" +arrQuestions[indArr]+ "</span></div>"));
-});
-
-var countPoints = 0;
-$('#first-answer').click(function(){
-  countPoints += 2;
-  nextQuestion(countPoints,"Да");
-});
-$('#second-answer').click(function(){
-  countPoints++;
-  nextQuestion(countPoints,"Затрудняюсь ответить");
-});
-$('#third-answer').click(function(){
-
-  nextQuestion(countPoints,"Нет");
-});
-
-$('#end-test').click(function(){
-  endTest();
-});
-
-});
 var config = {
 apiKey: "AIzaSyAl05TmTxUFYOfpnKov_BUgZUD090OrIFU",
 authDomain: "disobeyparrot.firebaseapp.com",
@@ -225,6 +218,4 @@ function AddSpan(number, inputString){
   if(number == 0){
     $('.write-text-chat-bot').append($("<div class='output-chat-bot-text'><span class='output-chat-bot-text-span'>"+ inputString+"</span></div>"));
   }
-
-
 }
